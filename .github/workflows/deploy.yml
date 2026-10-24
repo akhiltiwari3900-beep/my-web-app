@@ -1,20 +1,19 @@
-name: My Web App CI/CD 
-on:
-  push:  
+name: My Web App CI/CD
+'on':
+  push:
     branches:
       - main
-  workflow_dispatch:
-jobds:
-  build:
-  runs-on: ubuntu-latest
+    workflows_dispatch: 
+     
+  jobs:
+   bulid:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
 
+      - name: Check website file
+        run:  test -f index.html
 
-steps:
- - name: Get the code
-   uses: actions/checkout@v4
-                
-  -name: Check website file
-  runs: test -f index.html
-
-  -name: Show success message
-  run: echo "Buildsg check passed!" 
+      - name: Check website file
+        run: 'echo "Build check passed!"'
