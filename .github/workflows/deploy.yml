@@ -1,0 +1,21 @@
+name: My Web App CI/CD 
+on:
+  push:  
+    branches:
+      - main
+  workflow_dispatch:
+jobds:
+  build:
+  runs-on: ubuntu-latest
+
+
+steps:
+ - name: Get the code
+   uses: actions/checkout@v4
+
+   - name: check website file
+     run: test -f index.html
+
+   - name: Show success message
+    run: echo "Build check passed!"                
+
