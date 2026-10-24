@@ -12,10 +12,9 @@ jobds:
 steps:
  - name: Get the code
    uses: actions/checkout@v4
+                
+  -name: Check website file
+  runs: test -f index.html
 
-   - name: check website file
-     run: test -f index.html
-
-   - name: Show success message
-    run: echo "Build check passed!"                
-
+  -name: Show success message
+  run: echo "Buildsg check passed!" 
