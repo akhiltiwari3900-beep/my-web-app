@@ -1,14 +1,15 @@
 name: My Web App CI/CD
-'on':
+
+'on':    
   push:
     branches:
       - main
-    workflows_dispatch: 
+  workflows_dispatch: 
      
-  jobs:
+jobs:
    bulid:
     runs-on: ubuntu-latest
-    steps:
+   steps:
       - name: Get the code
         uses: actions/checkout@v4
 
